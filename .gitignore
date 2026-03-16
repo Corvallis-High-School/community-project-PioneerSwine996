@@ -1,2 +1,8 @@
 # Exclude compiled classes
 *.class
+
+.idea
+.vscode
+.github
+
+*.iml
