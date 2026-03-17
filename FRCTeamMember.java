@@ -1,9 +1,14 @@
 public class FRCTeamMember
 {
-    private String name;
-    private String subteam;
-    private double hours;
-    private final int teamNumber = 955;
+    protected String name;
+    protected String subteam;
+    protected double hours;
+
+    public FRCTeamMember() {
+        this.name = "Unknown";
+        this.subteam = "Unassigned";
+        this.hours = 0.0;
+    }
 
     public FRCTeamMember(String n, String s, double h) {
         name = n;
@@ -15,7 +20,6 @@ public class FRCTeamMember
         System.out.println("Name: " + name);
         System.out.println("Subteam: " + subteam);
         System.out.println("Hours Logged: " + hours);
-        System.out.println("Team Number: " + teamNumber);
         System.out.println();
     }
     public String getName() {
@@ -28,10 +32,6 @@ public class FRCTeamMember
 
     public double getHours() {
         return hours;
-    }
-
-    public int getTeamNumber() {
-        return teamNumber;
     }
     
     public void setName(String newName) {
@@ -46,9 +46,10 @@ public class FRCTeamMember
         hours = newHours;
     }
 
+    @Override
     public String toString() {
         return "Name: " + name + ", Subteam: " + subteam +
-               ", Hours: " + hours + ", Team Number: " + teamNumber;
+               ", Hours: " + hours;
     }
 
     public void addHours(double moreHours) {
